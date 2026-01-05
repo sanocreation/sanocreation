@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SANO CREATION AGENCY - Premium digital services powered by AI & Creativity. Professional video generation, editing, social media management, and more.">
+    <meta name="keywords" content="premium digital agency, AI video editing, professional social media management, creative services, affordable digital marketing">
+    <title>SANO CREATION AGENCY | Premium Digital Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a0e17;
+            --secondary-dark: #101826;
+            --accent-gold: #FFD700;
+            --accent-cyan: #00f7ff;
+            --text-light: #f8fafc;
+            --text-gray: #cbd5e1;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-gold: 0 0 40px rgba(255, 215, 0, 0.3);
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --safe-area: env(safe-area-inset-bottom, 20px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e17 0%, #0f1525 50%, #0a0e17 100%);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, var(--primary-dark), var(--secondary-dark));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 6px;
+            border: 3px solid var(--primary-dark);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(5deg); }
+            66% { transform: translateY(-10px) rotate(-5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: var(--shadow-gold); }
+            50% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.5); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(255, 215, 0, 0.3); }
+            50% { border-color: rgba(255, 215, 0, 0.6); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            padding: 120px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Premium HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                rgba(10, 14, 23, 0.95) 0%, 
+                rgba(16, 24, 38, 0.85) 50%, 
+                rgba(10, 14, 23, 0.95) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 247, 255, 0.15) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+            background-size: 200% 200%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: scaleIn 1s ease-out;
+        }
+
+        /* Professional Brand Name */
+        .brand-name {
+            font-size: clamp(3.5rem, 12vw, 5.5rem);
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-weight: 900;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-name .highlight {
+            background: linear-gradient(135deg, var(--accent-gold), #ffed4e, var(--accent-cyan));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+            position: relative;
+        }
+
+        .brand-name .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: slideInRight 0.8s ease-out 0.5s forwards;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--text-gray);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            position: relative;
+        }
+
+        .hero-tagline::before, .hero-tagline::after {
+            content: '✦';
+            position: absolute;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-tagline::before {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-tagline::after {
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Premium CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 22px 48px;
+            background: linear-gradient(135deg, var(--accent-gold), #ffed4e);
+            color: var(--primary-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            min-height: 64px;
+            min-width: 260px;
+            touch-action: manipulation;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 35px 70px rgba(255, 215, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #1ebe5c);
+            color: white;
+        }
+
+        .cta-button i {
+            font-size: 1.4rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Premium Services Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 8vw, 3.8rem);
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.3s forwards;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, 
+                rgba(16, 24, 38, 0.95), 
+                rgba(10, 14, 23, 0.95));
+            border-radius: var(--radius-xl);
+            padding: 45px 35px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: borderGlow 2s infinite;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+            transform-origin: left;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: var(--shadow-xl), var(--shadow-gold);
+        }
+
+        .service-icon {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            display: block;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+            background: linear-gradient(90deg, var(--accent-gold), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-desc {
+            color: var(--text-gray);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .service-price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            position: relative;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-price::before {
+            content: '₹';
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            animation: pulse 2s infinite;
+        }
+
+        /* Premium Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            padding: 45px 30px;
+            background: linear-gradient(145deg, 
+                rgba(16, 24, 38, 0.9), 
+                rgba(10, 14, 23, 0.9));
+            border-radius: var(--radius-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        /* Premium Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, 
+                rgba(16, 24, 38, 0.95), 
+                rgba(10, 14, 23, 0.95));
+            border-radius: var(--radius-xl);
+            padding: 70px 50px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-cyan), var(--accent-gold));
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            opacity: 0.3;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .contact-title {
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-subtitle {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .whatsapp-number-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(37, 211, 102, 0.15);
+            color: #25D366;
+            padding: 22px 40px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            border: 2px solid rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-number-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .whatsapp-number-display:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-number-display:hover {
+            transform: scale(1.05);
+            background: rgba(37, 211, 102, 0.25);
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-number-display i {
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .btn-large {
+            padding: 24px 55px;
+            font-size: 1.3rem;
+            min-width: 300px;
+        }
+
+        /* Premium Footer */
+        footer {
+            text-align: center;
+            padding: 70px 20px calc(70px + var(--safe-area));
+            color: var(--text-gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            position: relative;
+            background: linear-gradient(to top, var(--primary-dark), transparent);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-cyan), transparent);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .brand-footer {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .brand-footer::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 1px;
+        }
+
+        /* Animated Elements */
+        .floating-shapes {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            section {
+                padding: 100px 20px;
+            }
+            
+            .brand-name {
+                font-size: clamp(3rem, 10vw, 4.5rem);
+            }
+            
+            .services-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 16px;
+            }
+            
+            .brand-name {
+                font-size: clamp(2.8rem, 10vw, 4rem);
+            }
+            
+            .hero-tagline::before,
+            .hero-tagline::after {
+                display: none;
+            }
+            
+            .cta-button {
+                padding: 20px 40px;
+                min-width: 250px;
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .contact-section {
+                padding: 50px 25px;
+            }
+            
+            .whatsapp-number-display {
+                font-size: 1.3rem;
+                padding: 20px 35px;
+            }
+            
+            .btn-large {
+                min-width: 280px;
+                padding: 22px 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 2.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+                padding: 0 10px;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                padding: 35px 25px;
+            }
+            
+            .cta-button {
+                min-width: 220px;
+                font-size: 1.1rem;
+                padding: 18px 35px;
+            }
+            
+            .whatsapp-number-display {
+                font-size: 1.2rem;
+                padding: 18px 30px;
+            }
+        }
+
+        /* Animation Delays */
+        .delay-1 { animation-delay: 0.1s !important; transition-delay: 0.1s !important; }
+        .delay-2 { animation-delay: 0.2s !important; transition-delay: 0.2s !important; }
+        .delay-3 { animation-delay: 0.3s !important; transition-delay: 0.3s !important; }
+        .delay-4 { animation-delay: 0.4s !important; transition-delay: 0.4s !important; }
+        .delay-5 { animation-delay: 0.5s !important; transition-delay: 0.5s !important; }
+
+        /* Loading Animation */
+        .loader {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Shapes -->
+    <div class="floating-shapes" style="top: 15%; left: 5%; font-size: 2rem;">✦</div>
+    <div class="floating-shapes" style="top: 65%; right: 8%; font-size: 1.5rem;">⭑</div>
+    <div class="floating-shapes" style="top: 35%; left: 8%; font-size: 1.8rem;">◈</div>
+
+    <!-- Premium HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <h1 class="brand-name">
+                SANO <span class="highlight">CREATION</span> AGENCY
+            </h1>
+            <p class="hero-tagline">Professional Digital Services Powered by AI & Creativity</p>
+            <a href="https://wa.me/917003987024?text=Hi%20I%20want%20to%20order%20a%20service%20from%20Sano%20Creation%20Agency" class="cta-button whatsapp-btn" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Premium SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-subtitle">Cutting-edge digital solutions powered by AI and creative expertise</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-badge">Most Popular</div>
+                    <span class="service-icon">🎥</span>
+                    <h3 class="service-title">Video Generation</h3>
+                    <p class="service-desc">AI-powered video creation with cinematic quality. Perfect for content creators and businesses.</p>
+                    <div class="service-price">100<span style="font-size: 1.2rem; opacity: 0.8;">/minute</span></div>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-2">
+                    <span class="service-icon">💻</span>
+                    <h3 class="service-title">Video Editing</h3>
+                    <p class="service-desc">Professional editing with effects, transitions, and color grading for engaging content.</p>
+                    <div class="service-price">130<span style="font-size: 1.2rem; opacity: 0.8;">/minute</span></div>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-badge">Best Value</div>
+                    <span class="service-icon">📱</span>
+                    <h3 class="service-title">Social Media Management</h3>
+                    <p class="service-desc">Complete weekly package: 4 Reels + 3 Posts to boost your online presence.</p>
+                    <div class="service-price">550<span style="font-size: 1.2rem; opacity: 0.8;">/week</span></div>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-4">
+                    <span class="service-icon">📢</span>
+                    <h3 class="service-title">Ads Management</h3>
+                    <p class="service-desc">Targeted Instagram/Facebook ads to maximize ROI and drive conversions.</p>
+                    <div class="service-price">2000<span style="font-size: 1.2rem; opacity: 0.8;">/week</span></div>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-5">
+                    <span class="service-icon">🤖</span>
+                    <h3 class="service-title">AI Virtual Modeling</h3>
+                    <p class="service-desc">Realistic fashion showcase videos using cutting-edge AI technology.</p>
+                    <div class="service-price">70<span style="font-size: 1.2rem; opacity: 0.8;">/video</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium WHY CHOOSE US -->
+    <section id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">Experience the difference with our premium digital solutions</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p>Express turnaround without compromising on quality. We value your time.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll delay-2">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Affordable Pricing</h3>
+                    <p>Premium services at competitive rates. Exceptional value for your investment.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll delay-3">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI-Powered Services</h3>
+                    <p>Leverage cutting-edge AI technology for innovative and efficient solutions.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll delay-4">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Client Satisfaction</h3>
+                    <p>Your satisfaction is our priority. We exceed expectations every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-section">
+                <h2 class="contact-title">Ready to Transform Your Digital Presence?</h2>
+                <p class="contact-subtitle">Connect with us today and let's create something extraordinary together</p>
+                
+                <div class="whatsapp-cta">
+                    <div class="whatsapp-number-display animate-on-scroll">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+91 7003987024</span>
+                    </div>
+                    
+                    <a href="https://wa.me/917003987024?text=Hi%20I%20want%20to%20order%20a%20service%20from%20Sano%20Creation%20Agency" class="cta-button whatsapp-btn btn-large animate-on-scroll delay-2" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Start Your Project Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="brand-footer">SANO CREATION AGENCY</div>
+            <p>© 2026 Sano Creation Agency. All Rights Reserved.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Professional Digital Services | AI-Powered Solutions | Creative Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Premium Animations and Interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll Animations with Intersection Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Stagger animations for child elements
+                        const children = entry.target.querySelectorAll('.animate-on-scroll');
+                        children.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.classList.add('visible');
+                            }, index * 150);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-on-scroll, .section-header, .service-card, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Enhanced Button Hover Effects
+            function enhanceButtonEffects() {
+                const buttons = document.querySelectorAll('.cta-button, .whatsapp-number-display, .service-card, .feature-card');
+                
+                buttons.forEach(button => {
+                    // Hover effect
+                    button.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-8px) scale(1.05)';
+                        if (this.classList.contains('service-card') || this.classList.contains('feature-card')) {
+                            this.style.transform = 'translateY(-15px)';
+                        }
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        if (this.classList.contains('service-card') || this.classList.contains('feature-card')) {
+                            this.style.transform = 'translateY(0)';
+                        } else {
+                            this.style.transform = 'translateY(-8px) scale(1.05)';
+                        }
+                    });
+                    
+                    // Click ripple effect
+                    button.addEventListener('click', function(e) {
+                        if (this.tagName === 'A' && this.getAttribute('href').includes('wa.me')) return;
+                        
+                        const ripple = document.createElement('span');
+                        const rect = this.getBoundingClientRect();
+                        const size = Math.max(rect.width, rect.height);
+                        const x = e.clientX - rect.left - size / 2;
+                        const y = e.clientY - rect.top - size / 2;
+                        
+                        ripple.style.cssText = `
+                            position: absolute;
+                            border-radius: 50%;
+                            background: rgba(255, 255, 255, 0.7);
+                            transform: scale(0);
+                            animation: ripple 0.6s linear;
+                            width: ${size}px;
+                            height: ${size}px;
+                            top: ${y}px;
+                            left: ${x}px;
+                            pointer-events: none;
+                        `;
+                        
+                        this.appendChild(ripple);
+                        setTimeout(() => ripple.remove(), 600);
+                    });
+                });
+            }
+
+            // Floating shapes animation
+            function animateFloatingShapes() {
+                const shapes = document.querySelectorAll('.floating-shapes');
+                shapes.forEach((shape, index) => {
+                    shape.style.animationDelay = `${index * 2}s`;
+                    
+                    // Randomize animation duration
+                    const duration = 8 + Math.random() * 8;
+                    shape.style.animationDuration = `${duration}s`;
+                });
+            }
+
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+                
+                .service-card:hover .service-icon,
+                .feature-card:hover .feature-icon {
+                    animation-play-state: paused;
+                }
+                
+                .service-card:hover .service-price::before {
+                    transform: scale(1.2);
+                    transition: transform 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Smooth scroll with offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Initialize all effects
+            enhanceButtonEffects();
+            animateFloatingShapes();
+
+            // Parallax effect on scroll
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.3;
+                
+                const floatingShapes = document.querySelectorAll('.floating-shapes');
+                floatingShapes.forEach((shape, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    shape.style.transform = `translateY(${rate * speed}px)`;
+                });
+            });
+
+            // Add loading state to WhatsApp buttons
+            const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = '<span class="loader"></span> Connecting...';
+                    this.style.pointerEvents = 'none';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                        this.style.pointerEvents = 'auto';
+                    }, 2000);
+                });
+            });
+
+            // Animate brand name on load
+            const brandName = document.querySelector('.brand-name');
+            if (brandName) {
+                setTimeout(() => {
+                    brandName.classList.add('animated');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
