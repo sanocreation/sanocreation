@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SANO CREATION AGENCY - Premium digital services powered by AI & Creativity. Professional video generation, editing, social media management, and more.">
-    <meta name="keywords" content="premium digital agency, AI video editing, professional social media management, creative services, affordable digital marketing">
-    <title>SANO CREATION AGENCY | Premium Digital Services</title>
+    <meta name="description" content="SANO CREATION AGENCY - Premium Digital Marketing & AI-Powered Creative Services. Transform your digital presence with our professional solutions.">
+    <meta name="keywords" content="digital marketing agency, AI video editing, social media management, premium creative services, digital transformation">
+    <title>SANO CREATION | Premium Digital Marketing Agency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-dark: #0a0e17;
-            --secondary-dark: #101826;
+            --secondary-dark: #111827;
             --accent-gold: #FFD700;
             --accent-cyan: #00f7ff;
+            --accent-purple: #8b5cf6;
             --text-light: #f8fafc;
-            --text-gray: #cbd5e1;
+            --text-gray: #94a3b8;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            --shadow-gold: 0 0 40px rgba(255, 215, 0, 0.3);
-            --radius-lg: 20px;
-            --radius-xl: 24px;
+            --shadow-gold: 0 0 50px rgba(255, 215, 0, 0.2);
+            --radius-2xl: 24px;
+            --radius-3xl: 32px;
             --safe-area: env(safe-area-inset-bottom, 20px);
         }
 
@@ -40,7 +41,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0e17 0%, #0f1525 50%, #0a0e17 100%);
+            background: linear-gradient(135deg, #0a0e17 0%, #111827 50%, #0a0e17 100%);
             color: var(--text-light);
             line-height: 1.7;
             overflow-x: hidden;
@@ -50,7 +51,7 @@
 
         /* Premium Scrollbar */
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
@@ -59,15 +60,32 @@
 
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--accent-gold), var(--accent-cyan));
-            border-radius: 6px;
-            border: 3px solid var(--primary-dark);
+            border-radius: 5px;
+            border: 2px solid var(--primary-dark);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
+        /* Advanced Animations */
+        @keyframes float3D {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            33% { transform: translate3d(0, -10px, 10px) rotate(3deg); }
+            66% { transform: translate3d(0, 5px, -5px) rotate(-3deg); }
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.2); }
+        }
+
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -75,54 +93,10 @@
             }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(5deg); }
-            66% { transform: translateY(-10px) rotate(-5deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: var(--shadow-gold); }
-            50% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.5); }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         @keyframes scaleIn {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -132,12 +106,23 @@
 
         @keyframes borderGlow {
             0%, 100% { border-color: rgba(255, 215, 0, 0.3); }
-            50% { border-color: rgba(255, 215, 0, 0.6); }
+            50% { border-color: rgba(255, 215, 0, 0.8); }
         }
 
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Animation Classes */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -146,19 +131,12 @@
             transform: translateY(0);
         }
 
+        /* Layout */
         section {
-            padding: 120px 20px;
+            padding: 140px 20px;
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
         }
 
         .container {
@@ -168,20 +146,104 @@
             padding: 0 20px;
         }
 
-        /* Premium HERO SECTION */
+        /* Premium Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            position: relative;
+        }
+
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Premium Hero */
         .hero {
             min-height: 100vh;
-            min-height: 100dvh;
+            padding-top: 140px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, 
-                rgba(10, 14, 23, 0.95) 0%, 
-                rgba(16, 24, 38, 0.85) 50%, 
-                rgba(10, 14, 23, 0.95) 100%);
         }
 
         .hero::before {
@@ -192,86 +254,93 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 247, 255, 0.15) 0%, transparent 50%);
-            animation: gradientShift 15s ease infinite;
-            background-size: 200% 200%;
-            z-index: 1;
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 247, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .hero-content {
+            max-width: 800px;
             position: relative;
             z-index: 2;
-            animation: scaleIn 1s ease-out;
         }
 
-        /* Professional Brand Name */
-        .brand-name {
-            font-size: clamp(3.5rem, 12vw, 5.5rem);
-            margin-bottom: 25px;
-            color: var(--text-light);
-            font-weight: 900;
-            letter-spacing: -1px;
-            position: relative;
-            display: inline-block;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-gold);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            animation: float3D 4s ease-in-out infinite;
         }
 
-        .brand-name .highlight {
-            background: linear-gradient(135deg, var(--accent-gold), #ffed4e, var(--accent-cyan));
+        .hero-badge i {
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--accent-gold) 50%, var(--accent-cyan) 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 3s ease infinite;
-            position: relative;
+            animation: gradientFlow 8s ease infinite;
         }
 
-        .brand-name .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
-            border-radius: 2px;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: slideInRight 0.8s ease-out 0.5s forwards;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             color: var(--text-gray);
             margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
+            max-width: 600px;
+            line-height: 1.6;
             position: relative;
         }
 
-        .hero-tagline::before, .hero-tagline::after {
-            content: '✦';
+        .hero-subtitle::after {
+            content: '';
             position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 2px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--accent-gold);
-            font-size: 1.2rem;
-            animation: float 4s ease-in-out infinite;
+            margin-bottom: 5px;
         }
 
-        .hero-tagline::before {
-            left: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .hero-tagline::after {
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Premium CTA Button */
@@ -285,8 +354,9 @@
             color: var(--primary-dark);
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
@@ -296,9 +366,6 @@
             z-index: 1;
             min-height: 64px;
             min-width: 260px;
-            touch-action: manipulation;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -310,7 +377,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: 0.5s;
         }
 
@@ -319,13 +386,9 @@
         }
 
         .cta-button:hover {
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: 0 35px 70px rgba(255, 215, 0, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        .cta-button:active {
-            transform: translateY(-4px) scale(1.02);
+            animation: pulseGlow 2s infinite;
         }
 
         .whatsapp-btn {
@@ -333,38 +396,40 @@
             color: white;
         }
 
-        .cta-button i {
-            font-size: 1.4rem;
-            animation: float 3s ease-in-out infinite;
+        .whatsapp-btn::before {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
         }
 
-        /* Premium Services Section */
-        .section-header {
+        .cta-button i {
+            font-size: 1.4rem;
+            animation: float3D 3s ease-in-out infinite;
+        }
+
+        /* Premium Services */
+        .services-header {
             text-align: center;
             margin-bottom: 80px;
-            position: relative;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 8vw, 3.8rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            font-weight: 800;
             margin-bottom: 20px;
             color: var(--text-light);
-            position: relative;
-            display: inline-block;
-            opacity: 0;
-            animation: slideInLeft 1s ease-out forwards;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 3px;
         }
 
         .section-subtitle {
@@ -372,29 +437,25 @@
             color: var(--text-gray);
             max-width: 600px;
             margin: 0 auto;
-            opacity: 0;
-            animation: slideInRight 1s ease-out 0.3s forwards;
+            line-height: 1.6;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-top: 60px;
         }
 
         .service-card {
-            background: linear-gradient(145deg, 
-                rgba(16, 24, 38, 0.95), 
-                rgba(10, 14, 23, 0.95));
-            border-radius: var(--radius-xl);
-            padding: 45px 35px;
+            background: linear-gradient(145deg, rgba(17, 24, 39, 0.8), rgba(10, 14, 23, 0.8));
+            border-radius: var(--radius-2xl);
+            padding: 50px 40px;
             transition: var(--transition);
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            animation: borderGlow 2s infinite;
         }
 
         .service-card::before {
@@ -417,119 +478,133 @@
         .service-card:hover {
             transform: translateY(-15px);
             border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: var(--shadow-xl), var(--shadow-gold);
+            box-shadow: var(--shadow-xl);
         }
 
         .service-icon {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            display: block;
-            animation: float 6s ease-in-out infinite;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 247, 255, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            animation: float3D 6s ease-in-out infinite;
         }
 
         .service-title {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            color: white;
-            background: linear-gradient(90deg, var(--accent-gold), white);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-light);
         }
 
-        .service-desc {
+        .service-description {
             color: var(--text-gray);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
+            margin-bottom: 30px;
             line-height: 1.7;
         }
 
-        .service-price {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--accent-gold);
-            position: relative;
-            padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
         }
 
-        .service-price::before {
-            content: '₹';
-            font-size: 1.5rem;
-            opacity: 0.8;
+        .service-features li {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .service-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
             color: var(--primary-dark);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 800;
-            animation: pulse 2s infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Premium Features Section */
-        .features-grid {
+        /* Premium Process */
+        .process-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-            gap: 35px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
         }
 
-        .feature-card {
-            padding: 45px 30px;
-            background: linear-gradient(145deg, 
-                rgba(16, 24, 38, 0.9), 
-                rgba(10, 14, 23, 0.9));
-            border-radius: var(--radius-xl);
+        .process-step {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 40px 30px;
+            background: linear-gradient(145deg, rgba(17, 24, 39, 0.8), rgba(10, 14, 23, 0.8));
+            border-radius: var(--radius-2xl);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
+            position: relative;
         }
 
-        .feature-card:hover {
-            transform: translateY(-12px);
+        .process-step:hover {
+            transform: translateY(-10px);
             border-color: var(--accent-gold);
-            box-shadow: var(--shadow-xl);
         }
 
-        .feature-icon {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            display: inline-block;
+        .step-number {
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: float 4s ease-in-out infinite;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0 auto 30px;
         }
 
-        .feature-title {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
             color: var(--text-light);
         }
 
-        /* Premium Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, 
-                rgba(16, 24, 38, 0.95), 
-                rgba(10, 14, 23, 0.95));
-            border-radius: var(--radius-xl);
-            padding: 70px 50px;
+        /* Premium Contact */
+        .contact-container {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(10, 14, 23, 0.9));
+            border-radius: var(--radius-3xl);
+            padding: 80px 60px;
             position: relative;
             overflow: hidden;
-            border: 2px solid transparent;
-            background-clip: padding-box;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .contact-section::before {
+        .contact-container::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -537,142 +612,135 @@
             right: -2px;
             bottom: -2px;
             background: linear-gradient(45deg, var(--accent-gold), var(--accent-cyan), var(--accent-gold));
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-3xl);
             z-index: -1;
             opacity: 0.3;
-            animation: gradientShift 3s ease infinite;
+            animation: gradientFlow 3s ease infinite;
         }
 
-        .contact-title {
-            font-size: clamp(2.2rem, 6vw, 3.2rem);
-            margin-bottom: 20px;
+        .contact-header {
             text-align: center;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 60px;
         }
 
-        .contact-subtitle {
-            color: var(--text-gray);
-            font-size: 1.2rem;
-            margin-bottom: 50px;
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .contact-method {
             text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .whatsapp-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .whatsapp-number-display {
-            display: inline-flex;
-            align-items: center;
-            gap: 18px;
-            background: rgba(37, 211, 102, 0.15);
-            color: #25D366;
-            padding: 22px 40px;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            border: 2px solid rgba(37, 211, 102, 0.4);
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
         }
 
-        .whatsapp-number-display::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.5s;
+        .contact-method:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+            background: rgba(255, 215, 0, 0.05);
         }
 
-        .whatsapp-number-display:hover::before {
-            left: 100%;
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 0 auto 30px;
         }
 
-        .whatsapp-number-display:hover {
-            transform: scale(1.05);
-            background: rgba(37, 211, 102, 0.25);
-            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.3);
+        .contact-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
         }
 
-        .whatsapp-number-display i {
-            font-size: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .btn-large {
-            padding: 24px 55px;
-            font-size: 1.3rem;
-            min-width: 300px;
+        .contact-info p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         /* Premium Footer */
-        footer {
-            text-align: center;
-            padding: 70px 20px calc(70px + var(--safe-area));
-            color: var(--text-gray);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1rem;
-            position: relative;
+        .footer {
             background: linear-gradient(to top, var(--primary-dark), transparent);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
         }
 
-        footer::before {
+        .footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-cyan), transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
         }
 
         .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
-        .brand-footer {
+        .footer-brand .logo {
             font-size: 2rem;
-            font-weight: 900;
-            color: var(--accent-gold);
             margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
         }
 
-        .brand-footer::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
-            border-radius: 1px;
+        .footer-brand p {
+            color: var(--text-gray);
+            max-width: 300px;
+            line-height: 1.7;
         }
 
-        /* Animated Elements */
-        .floating-shapes {
-            position: absolute;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.1;
-            animation: float 8s ease-in-out infinite;
+        .footer-links h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
         }
 
         /* Responsive Design */
@@ -681,12 +749,12 @@
                 padding: 100px 20px;
             }
             
-            .brand-name {
-                font-size: clamp(3rem, 10vw, 4.5rem);
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
-            .services-grid {
-                gap: 30px;
+            .contact-container {
+                padding: 60px 40px;
             }
         }
 
@@ -695,232 +763,417 @@
                 padding: 80px 16px;
             }
             
-            .brand-name {
-                font-size: clamp(2.8rem, 10vw, 4rem);
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
             }
             
-            .hero-tagline::before,
-            .hero-tagline::after {
-                display: none;
+            .nav-links {
+                gap: 20px;
             }
             
-            .cta-button {
-                padding: 20px 40px;
-                min-width: 250px;
-                font-size: 1.1rem;
+            .hero {
+                padding-top: 180px;
+            }
+            
+            .hero-stats {
+                justify-content: center;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
             }
             
-            .contact-section {
-                padding: 50px 25px;
+            .contact-container {
+                padding: 40px 25px;
             }
             
-            .whatsapp-number-display {
-                font-size: 1.3rem;
-                padding: 20px 35px;
+            .contact-methods {
+                grid-template-columns: 1fr;
             }
             
-            .btn-large {
-                min-width: 280px;
-                padding: 22px 45px;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
 
         @media (max-width: 480px) {
-            .brand-name {
+            .hero-title {
                 font-size: 2.8rem;
             }
             
-            .hero-tagline {
-                font-size: 1.2rem;
-                padding: 0 10px;
-            }
-            
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .service-card {
-                padding: 35px 25px;
+                padding: 40px 30px;
             }
             
             .cta-button {
                 min-width: 220px;
-                font-size: 1.1rem;
-                padding: 18px 35px;
+                font-size: 1rem;
+                padding: 20px 35px;
             }
             
-            .whatsapp-number-display {
-                font-size: 1.2rem;
-                padding: 18px 30px;
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
 
         /* Animation Delays */
-        .delay-1 { animation-delay: 0.1s !important; transition-delay: 0.1s !important; }
-        .delay-2 { animation-delay: 0.2s !important; transition-delay: 0.2s !important; }
-        .delay-3 { animation-delay: 0.3s !important; transition-delay: 0.3s !important; }
-        .delay-4 { animation-delay: 0.4s !important; transition-delay: 0.4s !important; }
-        .delay-5 { animation-delay: 0.5s !important; transition-delay: 0.5s !important; }
-
-        /* Loading Animation */
-        .loader {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid rgba(255, 215, 0, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--accent-gold);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        .delay-1 { animation-delay: 0.1s; transition-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; transition-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; transition-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; transition-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; transition-delay: 0.5s; }
     </style>
 </head>
 <body>
-    <!-- Floating Shapes -->
-    <div class="floating-shapes" style="top: 15%; left: 5%; font-size: 2rem;">✦</div>
-    <div class="floating-shapes" style="top: 65%; right: 8%; font-size: 1.5rem;">⭑</div>
-    <div class="floating-shapes" style="top: 35%; left: 8%; font-size: 1.8rem;">◈</div>
-
-    <!-- Premium HERO SECTION -->
-    <section class="hero" id="hero">
-        <div class="container hero-content">
-            <h1 class="brand-name">
-                SANO <span class="highlight">CREATION</span> AGENCY
-            </h1>
-            <p class="hero-tagline">Professional Digital Services Powered by AI & Creativity</p>
-            <a href="https://wa.me/917003987024?text=Hi%20I%20want%20to%20order%20a%20service%20from%20Sano%20Creation%20Agency" class="cta-button whatsapp-btn" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+    <!-- Premium Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo">
+                SANO <span>CREATION</span>
             </a>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Premium Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i>
+                    Premium Digital Marketing Agency
+                </div>
+                <h1 class="hero-title">
+                    Transform Your Digital Presence With AI-Powered Creativity
+                </h1>
+                <p class="hero-subtitle">
+                    We deliver premium digital marketing solutions powered by cutting-edge AI technology. Elevate your brand with our professional services.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="cta-button animate-on-scroll delay-2">
+                    <i class="fab fa-whatsapp"></i> Start Your Project
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Premium SERVICES SECTION -->
+    <!-- Premium Services Section -->
     <section id="services">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Premium Services</h2>
-                <p class="section-subtitle">Cutting-edge digital solutions powered by AI and creative expertise</p>
+            <div class="services-header animate-on-scroll">
+                <div class="section-label">Our Premium Services</div>
+                <h2 class="section-title">Digital Marketing Solutions</h2>
+                <p class="section-subtitle">Comprehensive services designed to elevate your brand's digital presence</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card animate-on-scroll delay-1">
                     <div class="service-badge">Most Popular</div>
-                    <span class="service-icon">🎥</span>
-                    <h3 class="service-title">Video Generation</h3>
-                    <p class="service-desc">AI-powered video creation with cinematic quality. Perfect for content creators and businesses.</p>
-                    <div class="service-price">100<span style="font-size: 1.2rem; opacity: 0.8;">/minute</span></div>
+                    <div class="service-icon">
+                        🎥
+                    </div>
+                    <h3 class="service-title">AI Video Production</h3>
+                    <p class="service-description">
+                        Cutting-edge AI-powered video creation and editing services that transform your ideas into engaging visual content.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AI Video Generation</li>
+                        <li><i class="fas fa-check"></i> Professional Editing</li>
+                        <li><i class="fas fa-check"></i> Motion Graphics</li>
+                        <li><i class="fas fa-check"></i> Color Grading</li>
+                    </ul>
+                    <div class="service-price">Starting at ₹100/minute</div>
                 </div>
-                
+
                 <div class="service-card animate-on-scroll delay-2">
-                    <span class="service-icon">💻</span>
-                    <h3 class="service-title">Video Editing</h3>
-                    <p class="service-desc">Professional editing with effects, transitions, and color grading for engaging content.</p>
-                    <div class="service-price">130<span style="font-size: 1.2rem; opacity: 0.8;">/minute</span></div>
-                </div>
-                
-                <div class="service-card animate-on-scroll delay-3">
-                    <div class="service-badge">Best Value</div>
-                    <span class="service-icon">📱</span>
+                    <div class="service-badge">Trending</div>
+                    <div class="service-icon">
+                        📱
+                    </div>
                     <h3 class="service-title">Social Media Management</h3>
-                    <p class="service-desc">Complete weekly package: 4 Reels + 3 Posts to boost your online presence.</p>
-                    <div class="service-price">550<span style="font-size: 1.2rem; opacity: 0.8;">/week</span></div>
+                    <p class="service-description">
+                        Complete social media management package to build and maintain your brand's online presence.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 4 Reels Weekly</li>
+                        <li><i class="fas fa-check"></i> 3 Posts Weekly</li>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> Analytics & Reports</li>
+                    </ul>
+                    <div class="service-price">₹550/week</div>
                 </div>
-                
+
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-badge">High ROI</div>
+                    <div class="service-icon">
+                        📢
+                    </div>
+                    <h3 class="service-title">Digital Advertising</h3>
+                    <p class="service-description">
+                        Targeted ad campaigns on Instagram and Facebook to maximize your reach and drive conversions.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Campaign Strategy</li>
+                        <li><i class="fas fa-check"></i> Ad Creation</li>
+                        <li><i class="fas fa-check"></i> Performance Tracking</li>
+                        <li><i class="fas fa-check"></i> A/B Testing</li>
+                    </ul>
+                    <div class="service-price">₹2000/week</div>
+                </div>
+
                 <div class="service-card animate-on-scroll delay-4">
-                    <span class="service-icon">📢</span>
-                    <h3 class="service-title">Ads Management</h3>
-                    <p class="service-desc">Targeted Instagram/Facebook ads to maximize ROI and drive conversions.</p>
-                    <div class="service-price">2000<span style="font-size: 1.2rem; opacity: 0.8;">/week</span></div>
-                </div>
-                
-                <div class="service-card animate-on-scroll delay-5">
-                    <span class="service-icon">🤖</span>
+                    <div class="service-icon">
+                        🤖
+                    </div>
                     <h3 class="service-title">AI Virtual Modeling</h3>
-                    <p class="service-desc">Realistic fashion showcase videos using cutting-edge AI technology.</p>
-                    <div class="service-price">70<span style="font-size: 1.2rem; opacity: 0.8;">/video</span></div>
+                    <p class="service-description">
+                        Revolutionary AI-powered virtual modeling for fashion and product showcases.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Realistic AI Models</li>
+                        <li><i class="fas fa-check"></i> Fashion Showcases</li>
+                        <li><i class="fas fa-check"></i> Product Visualization</li>
+                        <li><i class="fas fa-check"></i> Custom Animations</li>
+                    </ul>
+                    <div class="service-price">₹70/video</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Premium WHY CHOOSE US -->
+    <!-- Premium Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="services-header animate-on-scroll">
+                <div class="section-label">Our Process</div>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">A streamlined process designed for efficiency and excellence</p>
+            </div>
+
+            <div class="process-container">
+                <div class="process-step animate-on-scroll delay-1">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p>We analyze your goals and requirements to understand your vision.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-2">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Strategy</h3>
+                    <p>Developing a customized strategy tailored to your specific needs.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-3">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Execution</h3>
+                    <p>Implementing the plan with precision and attention to detail.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-4">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Delivery</h3>
+                    <p>Providing final deliverables and continuous optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Why Choose Us -->
     <section id="why-us">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Us</h2>
-                <p class="section-subtitle">Experience the difference with our premium digital solutions</p>
+            <div class="services-header animate-on-scroll">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">The SANO Advantage</h2>
+                <p class="section-subtitle">What sets us apart in the digital marketing landscape</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll delay-1">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Delivery</h3>
-                    <p>Express turnaround without compromising on quality. We value your time.</p>
+
+            <div class="process-container">
+                <div class="process-step animate-on-scroll delay-1">
+                    <div class="step-number" style="background: linear-gradient(135deg, #25D366, #1ebe5c);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="step-title">Fast Delivery</h3>
+                    <p>Quick turnaround times without compromising on quality or attention to detail.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll delay-2">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Affordable Pricing</h3>
-                    <p>Premium services at competitive rates. Exceptional value for your investment.</p>
+                <div class="process-step animate-on-scroll delay-2">
+                    <div class="step-number" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3 class="step-title">Affordable Excellence</h3>
+                    <p>Premium services at competitive prices, offering exceptional value for investment.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll delay-3">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">AI-Powered Services</h3>
-                    <p>Leverage cutting-edge AI technology for innovative and efficient solutions.</p>
+                <div class="process-step animate-on-scroll delay-3">
+                    <div class="step-number">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="step-title">AI-Powered</h3>
+                    <p>Leveraging cutting-edge AI technology for innovative and efficient solutions.</p>
                 </div>
-                
-                <div class="feature-card animate-on-scroll delay-4">
-                    <div class="feature-icon">⭐</div>
-                    <h3 class="feature-title">Client Satisfaction</h3>
-                    <p>Your satisfaction is our priority. We exceed expectations every time.</p>
+                <div class="process-step animate-on-scroll delay-4">
+                    <div class="step-number" style="background: linear-gradient(135deg, #00f7ff, #0ea5e9);">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="step-title">Client First</h3>
+                    <p>Your satisfaction is our priority. We exceed expectations every single time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Premium CONTACT SECTION -->
+    <!-- Premium Contact Section -->
     <section id="contact">
         <div class="container">
-            <div class="contact-section">
-                <h2 class="contact-title">Ready to Transform Your Digital Presence?</h2>
-                <p class="contact-subtitle">Connect with us today and let's create something extraordinary together</p>
-                
-                <div class="whatsapp-cta">
-                    <div class="whatsapp-number-display animate-on-scroll">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+91 7003987024</span>
+            <div class="contact-container animate-on-scroll">
+                <div class="contact-header">
+                    <div class="section-label">Get Started</div>
+                    <h2 class="section-title">Ready to Transform Your Digital Presence?</h2>
+                    <p class="section-subtitle">Contact us today for a free consultation and project estimate</p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method animate-on-scroll delay-1">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>WhatsApp</h3>
+                            <p>+91 7003987024</p>
+                        </div>
+                        <a href="https://wa.me/917003987024?text=Hi%20I%20want%20to%20order%20a%20service%20from%20Sano%20Creation%20Agency" 
+                           class="cta-button whatsapp-btn" 
+                           style="margin-top: 30px; width: 100%;" 
+                           target="_blank" 
+                           rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Message Now
+                        </a>
                     </div>
-                    
-                    <a href="https://wa.me/917003987024?text=Hi%20I%20want%20to%20order%20a%20service%20from%20Sano%20Creation%20Agency" class="cta-button whatsapp-btn btn-large animate-on-scroll delay-2" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> Start Your Project Now
-                    </a>
+
+                    <div class="contact-method animate-on-scroll delay-2">
+                        <div class="contact-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Quick Start</h3>
+                            <p>Start Your Project</p>
+                        </div>
+                        <a href="#services" 
+                           class="cta-button" 
+                           style="margin-top: 30px; width: 100%; background: linear-gradient(135deg, var(--accent-purple), #8b5cf6);">
+                            <i class="fas fa-play"></i> View Services
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px;">
+                        Working Hours: 24/7 Support Available
+                    </p>
+                    <div class="hero-badge" style="margin: 0 auto; animation: pulseGlow 2s infinite;">
+                        <i class="fas fa-clock"></i>
+                        Average Response Time: 15 minutes
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Premium FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <div class="brand-footer">SANO CREATION AGENCY</div>
-            <p>© 2026 Sano Creation Agency. All Rights Reserved.</p>
-            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Professional Digital Services | AI-Powered Solutions | Creative Excellence</p>
+    <!-- Premium Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand animate-on-scroll">
+                    <a href="#hero" class="logo" style="font-size: 2.2rem; margin-bottom: 25px; display: inline-block;">
+                        SANO <span>CREATION</span>
+                    </a>
+                    <p>
+                        Premium digital marketing agency specializing in AI-powered creative solutions. 
+                        Transforming brands through innovation and excellence.
+                    </p>
+                </div>
+
+                <div class="footer-links animate-on-scroll delay-1">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">AI Video Production</a></li>
+                        <li><a href="#services">Social Media Management</a></li>
+                        <li><a href="#services">Digital Advertising</a></li>
+                        <li><a href="#services">AI Virtual Modeling</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links animate-on-scroll delay-2">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links animate-on-scroll delay-3">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><a href="https://wa.me/917003987024" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a></li>
+                        <li><a href="#contact">
+                            <i class="fas fa-phone"></i> +91 7003987024
+                        </a></li>
+                        <li><a href="#contact">
+                            <i class="fas fa-envelope"></i> Contact Us
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom animate-on-scroll delay-4">
+                <p>© 2026 Sano Creation Agency. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+                    Premium Digital Marketing Solutions | AI-Powered Creativity | Professional Excellence
+                </p>
+            </div>
         </div>
     </footer>
 
     <script>
         // Premium Animations and Interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Scroll Animations with Intersection Observer
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll animations with Intersection Observer
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -100px 0px'
@@ -936,42 +1189,35 @@
                         children.forEach((child, index) => {
                             setTimeout(() => {
                                 child.classList.add('visible');
-                            }, index * 150);
+                            }, index * 200);
                         });
                     }
                 });
             }, observerOptions);
 
             // Observe all animated elements
-            document.querySelectorAll('.animate-on-scroll, .section-header, .service-card, .feature-card').forEach(el => {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
                 observer.observe(el);
             });
 
-            // Enhanced Button Hover Effects
-            function enhanceButtonEffects() {
-                const buttons = document.querySelectorAll('.cta-button, .whatsapp-number-display, .service-card, .feature-card');
+            // Enhanced hover effects
+            function enhanceHoverEffects() {
+                const interactiveElements = document.querySelectorAll('.service-card, .process-step, .contact-method, .footer-links a');
                 
+                interactiveElements.forEach(element => {
+                    element.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px)';
+                    });
+                    
+                    element.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                    });
+                });
+
+                // Button ripple effect
+                const buttons = document.querySelectorAll('.cta-button');
                 buttons.forEach(button => {
-                    // Hover effect
-                    button.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-8px) scale(1.05)';
-                        if (this.classList.contains('service-card') || this.classList.contains('feature-card')) {
-                            this.style.transform = 'translateY(-15px)';
-                        }
-                    });
-                    
-                    button.addEventListener('mouseleave', function() {
-                        if (this.classList.contains('service-card') || this.classList.contains('feature-card')) {
-                            this.style.transform = 'translateY(0)';
-                        } else {
-                            this.style.transform = 'translateY(-8px) scale(1.05)';
-                        }
-                    });
-                    
-                    // Click ripple effect
                     button.addEventListener('click', function(e) {
-                        if (this.tagName === 'A' && this.getAttribute('href').includes('wa.me')) return;
-                        
                         const ripple = document.createElement('span');
                         const rect = this.getBoundingClientRect();
                         const size = Math.max(rect.width, rect.height);
@@ -981,7 +1227,7 @@
                         ripple.style.cssText = `
                             position: absolute;
                             border-radius: 50%;
-                            background: rgba(255, 255, 255, 0.7);
+                            background: rgba(255, 255, 255, 0.6);
                             transform: scale(0);
                             animation: ripple 0.6s linear;
                             width: ${size}px;
@@ -997,18 +1243,6 @@
                 });
             }
 
-            // Floating shapes animation
-            function animateFloatingShapes() {
-                const shapes = document.querySelectorAll('.floating-shapes');
-                shapes.forEach((shape, index) => {
-                    shape.style.animationDelay = `${index * 2}s`;
-                    
-                    // Randomize animation duration
-                    const duration = 8 + Math.random() * 8;
-                    shape.style.animationDuration = `${duration}s`;
-                });
-            }
-
             // Add CSS for ripple animation
             const style = document.createElement('style');
             style.textContent = `
@@ -1019,19 +1253,21 @@
                     }
                 }
                 
-                .service-card:hover .service-icon,
-                .feature-card:hover .feature-icon {
+                .service-card:hover .service-icon {
                     animation-play-state: paused;
                 }
                 
-                .service-card:hover .service-price::before {
-                    transform: scale(1.2);
-                    transition: transform 0.3s ease;
+                .nav-links a.active {
+                    color: var(--accent-gold);
+                }
+                
+                .nav-links a.active::after {
+                    width: 100%;
                 }
             `;
             document.head.appendChild(style);
 
-            // Smooth scroll with offset
+            // Smooth scroll with active navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -1040,6 +1276,13 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
+                        // Update active nav link
+                        document.querySelectorAll('.nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Smooth scroll
                         window.scrollTo({
                             top: target.offsetTop - 100,
                             behavior: 'smooth'
@@ -1048,44 +1291,66 @@
                 });
             });
 
-            // Initialize all effects
-            enhanceButtonEffects();
-            animateFloatingShapes();
-
-            // Parallax effect on scroll
+            // Update active nav link on scroll
+            const sections = document.querySelectorAll('section[id]');
             window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.3;
-                
-                const floatingShapes = document.querySelectorAll('.floating-shapes');
-                floatingShapes.forEach((shape, index) => {
-                    const speed = 0.5 + (index * 0.1);
-                    shape.style.transform = `translateY(${rate * speed}px)`;
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
                 });
             });
+
+            // Initialize all effects
+            enhanceHoverEffects();
+
+            // Counter animation for stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observerStats = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.textContent);
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = Math.floor(current) + (entry.target.textContent.includes('%') ? '%' : '+');
+                        }, 50);
+                        observerStats.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => observerStats.observe(stat));
 
             // Add loading state to WhatsApp buttons
             const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
             whatsappButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const originalHTML = this.innerHTML;
-                    this.innerHTML = '<span class="loader"></span> Connecting...';
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
                     this.style.pointerEvents = 'none';
                     
                     setTimeout(() => {
                         this.innerHTML = originalHTML;
                         this.style.pointerEvents = 'auto';
-                    }, 2000);
+                    }, 1500);
                 });
             });
-
-            // Animate brand name on load
-            const brandName = document.querySelector('.brand-name');
-            if (brandName) {
-                setTimeout(() => {
-                    brandName.classList.add('animated');
-                }, 500);
-            }
         });
     </script>
 </body>
