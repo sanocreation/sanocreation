@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sano Creation | Elite Digital Growth Agency</title>
+    <style>
+        /* =========================================
+           CSS Variables (Deep Neon Green Palette)
+        ========================================= */
+        :root {
+            --bg-dark: #030504;
+            --bg-card: #070d09;
+            --neon-green: #00FF7F; /* Brighter, deeper neon green */
+            --neon-green-dim: rgba(0, 255, 127, 0.15);
+            --neon-green-glow: rgba(0, 255, 127, 0.4);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-light: rgba(0, 255, 127, 0.15); /* Greenish default border */
+            --border-hover: rgba(0, 255, 127, 0.8); /* Strong green on hover */
+            --glass-bg: rgba(3, 5, 4, 0.8);
+        }
+
+        /* =========================================
+           Reset & Base Styles
+        ========================================= */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        ::selection { background: var(--neon-green); color: #000; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #112215; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-green); }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            background-color: var(--bg-dark); color: var(--text-main);
+            line-height: 1.6; overflow-x: hidden; position: relative;
+        }
+
+        /* Subtle Background Texture */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05; pointer-events: none; z-index: 9999;
+        }
+
+        /* Ambient Glows */
+        .ambient-glow {
+            position: absolute; border-radius: 50%; filter: blur(140px); z-index: -1; pointer-events: none;
+        }
+        .glow-1 { top: -5%; left: -10%; width: 50vw; height: 50vw; background: rgba(0, 255, 127, 0.15); }
+        .glow-2 { bottom: 15%; right: -10%; width: 40vw; height: 40vw; background: rgba(0, 255, 127, 0.1); }
+
+        /* =========================================
+           Typography
+        ========================================= */
+        h1, h2, h3 { line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; }
+        
+        .text-neon { color: var(--neon-green); text-shadow: 0 0 25px rgba(0, 255, 127, 0.5); }
+        .highlight { color: #fff; background: rgba(0, 255, 127, 0.2); padding: 2px 8px; border-radius: 6px; border-left: 2px solid var(--neon-green); }
+
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 7rem 1.5rem; }
+
+        .section-tag {
+            display: inline-flex; align-items: center; padding: 0.6rem 1.5rem;
+            border: 1px solid var(--neon-green); border-radius: 50px; color: var(--neon-green);
+            font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            margin-bottom: 1.5rem; background: rgba(0, 255, 127, 0.05);
+            backdrop-filter: blur(5px); box-shadow: 0 0 15px rgba(0, 255, 127, 0.1);
+        }
+        .section-tag::before {
+            content: ''; width: 8px; height: 8px; background: var(--neon-green);
+            border-radius: 50%; margin-right: 10px; box-shadow: 0 0 10px var(--neon-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 127, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 127, 0); }
+        }
+
+        /* =========================================
+           Navigation
+        ========================================= */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 2rem;
+            background: var(--glass-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-light);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: 0.3s;
+        }
+        nav.scrolled { padding: 0.8rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.9); }
+
+        .nav-brand { font-size: 1.6rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: 1px; }
+        .nav-brand span { color: var(--neon-green); text-shadow: 0 0 10px rgba(0, 255, 127, 0.5); }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--neon-green); text-shadow: 0 0 10px rgba(0, 255, 127, 0.3); }
+
+        /* =========================================
+           Buttons
+        ========================================= */
+        .btn-primary {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--neon-green); color: #000; font-size: 1.05rem; font-weight: 900;
+            text-decoration: none; padding: 1rem 2.5rem; border-radius: 50px;
+            transition: all 0.3s ease; border: 2px solid var(--neon-green); box-shadow: 0 5px 25px var(--neon-green-glow);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(0, 255, 127, 0.7); background: #00e673; }
+
+        .btn-secondary {
+            display: inline-flex; background: rgba(0, 255, 127, 0.05); color: #fff;
+            font-size: 1.05rem; font-weight: 600; text-decoration: none; padding: 1rem 2.5rem;
+            border: 1px solid var(--neon-green); border-radius: 50px; transition: all 0.3s ease;
+        }
+        .btn-secondary:hover { background: var(--neon-green); color: #000; box-shadow: 0 5px 20px rgba(0, 255, 127, 0.4); }
+
+        /* =========================================
+           1. Hero Section
+        ========================================= */
+        #hero {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center; padding: 0 1.5rem; margin-top: 40px;
+        }
+
+        .agency-badge {
+            font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 2rem; color: #fff; border: 1px solid var(--neon-green);
+            padding: 0.6rem 2rem; border-radius: 50px; background: rgba(0, 255, 127, 0.05);
+            backdrop-filter: blur(5px); box-shadow: 0 0 20px rgba(0, 255, 127, 0.15);
+        }
+        .agency-badge span { color: var(--neon-green); }
+
+        #hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); max-width: 1000px; margin-bottom: 1.5rem; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        #hero p { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; }
+        
+        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+        /* =========================================
+           Marquee Ticker
+        ========================================= */
+        .marquee-wrapper { width: 100%; background: #050a07; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 1.2rem 0; overflow: hidden; }
+        .marquee-content { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
+        .marquee-text { font-size: 1.1rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding: 0 2rem; letter-spacing: 1px; }
+        .marquee-text span { color: var(--neon-green); }
+
+        /* =========================================
+           3. Services Section (Eye-Catching Grid)
+        ========================================= */
+        .services-header { text-align: center; margin-bottom: 5rem; }
+        .services-header h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        .services-header p { color: var(--text-muted); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #030504 100%);
+            border: 1px solid var(--border-light);
+            /* Deep Neon Green Side Border applied here */
+            border-left: 5px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 255, 127, 0.02);
+        }
+
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 127, 0.15);
+        }
+
+        .service-num {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(0, 255, 127, 0.05);
+            line-height: 1;
+            transition: 0.4s;
+        }
+        .service-card:hover .service-num { color: rgba(0, 255, 127, 0.2); transform: scale(1.1); }
+        
+        .card-icon {
+            width: 60px; height: 60px; background: rgba(0, 255, 127, 0.1); border: 1px solid rgba(0, 255, 127, 0.3);
+            border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px rgba(0, 255, 127, 0.1);
+        }
+        
+        .service-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #fff; padding-right: 40px; }
+        .service-card > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1; }
+        
+        /* Bullets */
+        .bullet-list { list-style: none; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .bullet-list li { 
+            font-size: 0.95rem; color: #d1d5db; margin-bottom: 0.8rem; 
+            display: flex; align-items: flex-start; 
+        }
+        .bullet-list li::before { 
+            content: '✦'; color: var(--neon-green);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+            margin-right: 12px; margin-top: -2px; text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* =========================================
+           4. Showcase / Demos Section
+        ========================================= */
+        #showcase {
+            background: linear-gradient(180deg, #030403 0%, #070d09 100%);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 8rem 1.5rem;
+        }
+
+        .demo-videos-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+        }
+
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .video-title {
+            background: rgba(0, 255, 127, 0.1);
+            color: var(--neon-green);
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 255, 127, 0.1);
+        }
+
+        /* Perfect 9:16 Vertical Phone Frame for Videos */
+        .vertical-video-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16; /* Forces 9:16 ratio */
+            background: #000;
+            border: 14px solid #111; /* Phone Bezel */
+            border-radius: 45px; /* Phone Corners */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 0 0 2px rgba(0, 255, 127, 0.2);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .vertical-video-frame:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,1), 0 0 0 3px var(--neon-green);
+        }
+
+        /* Phone Notch */
+        .vertical-video-frame::before {
+            content: ''; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+            width: 90px; height: 26px; background: #111; border-radius: 15px; z-index: 10;
+        }
+
+        .vertical-video-frame iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            border: none; border-radius: 30px; object-fit: cover;
+        }
+
+        /* Premium Graphic Design Display Box */
+        .graphic-design-demo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 6rem;
+        }
+
+        .graphic-design-frame {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 4 / 5;
+            background: #000;
+            border: 10px solid #111;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9), inset 0 0 0 2px rgba(0, 255, 127, 0.3);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .graphic-design-frame img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; opacity: 0.85;
+        }
+        .graphic-design-frame:hover { border-color: var(--neon-green); box-shadow: 0 30px 60px rgba(0,0,0,1), 0 0 30px rgba(0, 255, 127, 0.2); }
+        .graphic-design-frame:hover img { transform: scale(1.08); opacity: 1; }
+
+        .graphic-design-frame .overlay-btn {
+            position: absolute; background: var(--neon-green); color: #000;
+            padding: 1rem 2rem; border-radius: 50px; font-weight: 900;
+            font-size: 1rem; text-transform: uppercase; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 255, 127, 0.5); opacity: 0;
+            transform: translateY(30px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .graphic-design-frame:hover .overlay-btn { opacity: 1; transform: translateY(0); }
+
+        /* =========================================
+           5. Workflow (Deep Border Steps)
+        ========================================= */
+        .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
+        
+        .timeline-item { 
+            background: linear-gradient(145deg, var(--bg-card) 0%, #030504 100%);
+            padding: 3rem 2.5rem; border-radius: 20px; 
+            border: 1px solid var(--border-light); 
+            border-left: 5px solid var(--neon-green); /* Side border for workflow too */
+            text-align: left; transition: 0.4s; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .timeline-item:hover { border-color: var(--border-hover); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 255, 127, 0.1); }
+        
+        .step-circle { 
+            width: 60px; height: 60px; background: rgba(0,255,127,0.1); border: 2px solid var(--neon-green); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+            font-size: 1.8rem; font-weight: 900; color: var(--neon-green); margin-bottom: 1.5rem; 
+            box-shadow: 0 0 15px rgba(0,255,127,0.2);
+        }
+        .timeline-item h3 { font-size: 1.6rem; color: #fff; margin-bottom: 1rem; }
+
+        /* =========================================
+           6. Final CTA
+        ========================================= */
+        #cta { text-align: center; padding: 8rem 1.5rem; position: relative; }
+        .cta-box {
+            max-width: 900px; margin: 0 auto; background: var(--bg-card);
+            border: 2px solid var(--border-light); padding: 6rem 2rem; border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 255, 127, 0.05); 
+            position: relative; overflow: hidden;
+        }
+        .cta-box:hover { border-color: var(--neon-green); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 255, 127, 0.15); }
+        #cta h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; color: #fff; }
+
+        /* =========================================
+           Footer
+        ========================================= */
+        footer { padding: 4rem 1.5rem 2rem; border-top: 1px solid var(--border-light); text-align: center; background: #000; }
+        .footer-brand { font-size: 2rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 0.5rem; color: #fff;}
+        .footer-brand span { color: var(--neon-green); text-shadow: 0 0 15px rgba(0, 255, 127, 0.4); }
+        .footer-copyright { color: var(--text-muted); font-size: 0.95rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light); }
+
+        /* =========================================
+           Animations
+        ========================================= */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* =========================================
+           Mobile Responsiveness
+        ========================================= */
+        @media (max-width: 992px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            
+            /* Floating Mobile Dock Menu */
+            .mobile-bottom-nav {
+                display: flex; position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%);
+                width: 92%; max-width: 380px; background: rgba(10, 12, 10, 0.95);
+                backdrop-filter: blur(20px); border: 1px solid rgba(0,255,127,0.3); border-radius: 50px;
+                justify-content: space-around; padding: 0.8rem 0; z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+            }
+            .mobile-bottom-nav a {
+                color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 700;
+                padding: 0.6rem 1.2rem; border-radius: 30px; transition: 0.3s;
+            }
+            .mobile-bottom-nav a.active { background: rgba(0, 255, 127, 0.15); color: var(--neon-green); }
+            
+            body { padding-bottom: 80px; }
+            .section-container { padding: 5rem 1rem; }
+            
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 2rem 1.5rem; border-left-width: 4px; }
+
+            .demo-videos-container { gap: 3.5rem; }
+            .graphic-design-frame .overlay-btn { opacity: 1; transform: translateY(0); } /* Always visible on mobile */
+
+            .hero-buttons { flex-direction: column; align-items: stretch; width: 100%; max-width: 350px; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 1.2rem; }
+            .cta-box { padding: 4rem 1.5rem; border-radius: 25px; border-width: 1px; }
+        }
+
+        @media (min-width: 769px) { .mobile-bottom-nav { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glows for Depth -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Desktop Nav -->
+    <nav id="navbar">
+        <a href="#" class="nav-brand">SANO<span>.</span></a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#showcase">Our Work</a>
+            <a href="#process">How it works</a>
+            <a href="#cta">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Mobile Dock Menu -->
+    <div class="mobile-bottom-nav">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#showcase">Work</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="agency-badge reveal">🚀 Welcome to Sano<span>Creation</span></div>
+        <h1 class="reveal" style="transition-delay: 0.1s;">
+            We Make Your Brand <br> <span class="text-neon">Go Viral.</span>
+        </h1>
+        <p class="reveal" style="transition-delay: 0.2s;">
+            Boring marketing bhool jao. Hum AI aur top-level creativity use karke apke business ke liye <span class="highlight">real sales aur leads</span> generate karte hain. 
+        </p>
+        <div class="hero-buttons reveal" style="transition-delay: 0.3s;">
+            <a href="https://wa.me/917003987024" target="_blank" class="btn-primary">💬 Message on WhatsApp</a>
+            <a href="#services" class="btn-secondary">View Our Services 👇</a>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span class="marquee-text">Video & Content Creation <span>✦</span> Social Media Management <span>✦</span> Cinematic Product Ads <span>✦</span> AI Virtual Modeling <span>✦</span> Premium Graphics Design <span>✦</span> Promotion Video <span>✦</span> </span>
+            <span class="marquee-text">Video & Content Creation <span>✦</span> Social Media Management <span>✦</span> Cinematic Product Ads <span>✦</span> AI Virtual Modeling <span>✦</span> Premium Graphics Design <span>✦</span> Promotion Video <span>✦</span> </span>
+        </div>
+    </div>
+
+    <!-- 1. Services Section -->
+    <section id="services" class="section-container">
+        <div class="services-header reveal">
+            <div class="section-tag">What We Do Best</div>
+            <h2 class="section-title">Services Jo <span class="text-neon">Result</span> Lati Hain</h2>
+            <p>Hum aisi clear aur direct strategies use karte hain jo apke brand ko fast grow kare.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Service 1: Video & Content Creation For Brand -->
+            <div class="service-card reveal">
+                <div class="service-num">01</div>
+                <div class="card-icon">📱</div>
+                <h3>Video & Content Creation For Brand</h3>
+                <p>Aisi engaging videos jo logon ko scroll rokne par majboor karein aur apke followers badhayein.</p>
+                <ul class="bullet-list">
+                    <li>Catchy scripts & storytelling</li>
+                    <li>Pro video editing & smooth cuts</li>
+                    <li>Trending audio & hashtags use</li>
+                    <li>Fast delivery for daily posting</li>
+                </ul>
+            </div>
+
+            <!-- Service 2: Social Media Management -->
+            <div class="service-card reveal" style="transition-delay: 0.1s;">
+                <div class="service-num">02</div>
+                <div class="card-icon">🤝</div>
+                <h3>Social Media Management</h3>
+                <p>Apke Instagram aur Facebook page ko grow karne ki poori zimmedari humari. Aap sirf business par focus karein.</p>
+                <ul class="bullet-list">
+                    <li>Daily attractive posts & stories</li>
+                    <li>Profile setup & bio optimization</li>
+                    <li>Follower growth strategies</li>
+                    <li>Comments & audience engagement</li>
+                </ul>
+            </div>
+
+            <!-- Service 3: Cinematic Product Ads -->
+            <div class="service-card reveal" style="transition-delay: 0.2s;">
+                <div class="service-num">03</div>
+                <div class="card-icon">💰</div>
+                <h3>Cinematic Product Ads</h3>
+                <p>Aise video ads jo sirf likes nahi, balki direct sales aur leads generate karte hain. Perfect for E-commerce.</p>
+                <ul class="bullet-list">
+                    <li>High-converting 3-second hooks</li>
+                    <li>Clear Call-To-Action (CTA)</li>
+                    <li>Persuasive ad copywriting</li>
+                    <li>Low cost per click (CPC) guarantee</li>
+                </ul>
+            </div>
+
+            <!-- Service 4: AI Virtual Modeling -->
+            <div class="service-card reveal">
+                <div class="service-num">04</div>
+                <div class="card-icon">🤖</div>
+                <h3>AI Virtual Modeling For Clothing Brand</h3>
+                <p>Bina expensive photoshoot ke apne clothes ya products ko real-looking AI human models par showcase karein.</p>
+                <ul class="bullet-list">
+                    <li>Zero studio ya camera ka kharcha</li>
+                    <li>100% real-looking virtual models</li>
+                    <li>Fast delivery for catalogs</li>
+                    <li>Paisa aur time dono ki bachat</li>
+                </ul>
+            </div>
+
+            <!-- Service 5: Premium Graphics Design -->
+            <div class="service-card reveal" style="transition-delay: 0.1s;">
+                <div class="service-num">05</div>
+                <div class="card-icon">🎨</div>
+                <h3>Premium Graphics Design</h3>
+                <p>Apke brand ko ek premium aur professional look dene wale eye-catching designs jo trust build karte hain.</p>
+                <ul class="bullet-list">
+                    <li>Instagram Carousel & Posts</li>
+                    <li>Facebook Banner & Ad Creatives</li>
+                    <li>YouTube Thumbnails (High CTR)</li>
+                    <li>Story Design & Reel Covers</li>
+                </ul>
+            </div>
+
+            <!-- Service 6: Promotion Video -->
+            <div class="service-card reveal" style="transition-delay: 0.2s;">
+                <div class="service-num">06</div>
+                <div class="card-icon">🎬</div>
+                <h3>Promotion Video</h3>
+                <p>Apne naye product ya service ko ek blockbuster trailer ki tarah launch karein. Audience ko excite karein.</p>
+                <ul class="bullet-list">
+                    <li>High-energy cinematic editing</li>
+                    <li>Awesome sound effects (SFX)</li>
+                    <li>Brand trust & authority building</li>
+                    <li>Perfect for YouTube & Website</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. Showcase / Demo Section -->
+    <section id="showcase" class="section-container" style="max-width: 100%; width: 100%;">
+        <div class="services-header reveal">
+            <div class="section-tag">Our Portfolio</div>
+            <h2 class="section-title">See Our <span class="text-neon">Work</span></h2>
+            <p>Humare premium videos aur designs ka ek chhota sa demo yahan dekhein.</p>
+        </div>
+
+        <!-- The 3 Demo Videos -->
+        <div class="demo-videos-container">
+            <!-- Video 1 -->
+            <div class="demo-item reveal">
+                <div class="video-title">🔥 Cinematic Product Ads</div>
+                <div class="vertical-video-frame">
+                    <iframe src="https://www.youtube.com/embed/p6FT2YQQXGA?rel=0&modestbranding=1" title="Ad Creatives" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="demo-item reveal" style="transition-delay: 0.1s;">
+                <div class="video-title">🎬 Promotion Video</div>
+                <div class="vertical-video-frame">
+                    <iframe src="https://www.youtube.com/embed/Kw_8zOc4U90?rel=0&modestbranding=1" title="Promos" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="demo-item reveal" style="transition-delay: 0.2s;">
+                <div class="video-title">🤖 AI Virtual Modeling For Clothing Brand</div>
+                <div class="vertical-video-frame">
+                    <iframe src="https://www.youtube.com/embed/XSq78axXIIc?rel=0&modestbranding=1" title="AI Modeling" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Graphic Design Demo -->
+        <div class="graphic-design-demo-container reveal">
+            <div class="video-title" style="font-size: 1.1rem; padding: 0.8rem 2.5rem;">🎨 Premium Graphics Design Portfolio</div>
+            <p style="color: var(--text-muted); margin-bottom: 2.5rem; text-align: center;">Humare banaye gaye premium designs dekhne ke liye niche click karein.</p>
+            <a href="https://www.youtube.com/post/UgkxfhfX2-9TRQW1YXZUhcZN7YDzhtFXkq0t" target="_blank" style="text-decoration:none;">
+                <div class="graphic-design-frame">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&auto=format&fit=crop" alt="Graphics Design Portfolio">
+                    <span class="overlay-btn">View Designs</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Workflow Section -->
+    <section id="process" class="section-container">
+        <div class="services-header reveal">
+            <div class="section-tag">Easy Process</div>
+            <h2 class="section-title">Kaam Kaise Hota Hai?</h2>
+            <p>Humara process simple, fast aur client-friendly hai.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="step-circle">1</div>
+                <h3>Plan</h3>
+                <p style="color: var(--text-muted);">Aapke business aur audience ko samajh kar ek clear strategy banate hain.</p>
+            </div>
+            <div class="timeline-item reveal" style="transition-delay: 0.1s;">
+                <div class="step-circle">2</div>
+                <h3>Create</h3>
+                <p style="color: var(--text-muted);">Humari expert team AI aur top tools use karke apke liye content banati hai.</p>
+            </div>
+            <div class="timeline-item reveal" style="transition-delay: 0.2s;">
+                <div class="step-circle">3</div>
+                <h3>Grow</h3>
+                <p style="color: var(--text-muted);">Us content ko publish karke aapke brand ki reach aur sales ko grow karte hain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta">
+        <div class="cta-box reveal">
+            <div class="section-tag" style="background: rgba(0,255,127,0.1); border-color: var(--neon-green);">Time For Action</div>
+            <h2>Ready to <span class="text-neon">Grow</span> Your Business?</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem;">Kab tak competitors ko aage badhte dekhoge? Aaj hi action lo aur apne brand ko viral banao.</p>
+            <a href="https://wa.me/917003987024" target="_blank" class="btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.2rem;">
+                🚀 Chat With Us on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">SANO<span>.</span></div>
+        <div style="color: var(--text-muted); font-weight: 600; font-size: 1rem;">📩 info@sanocreation.com</div>
+        <div class="footer-copyright">© 2026 Sano Creation. All Rights Reserved.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -20px 0px" };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, revealOptions);
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+
+            // Mobile Bottom Dock Menu Active State
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.mobile-bottom-nav a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 250) current = section.getAttribute('id');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) link.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
